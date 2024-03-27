@@ -75,9 +75,9 @@ def worker(token, channelid, guildid, endpoint, messageid):
 def main():
     with open('tokens.txt', 'r') as file:
         tokens = file.read().splitlines()
-    channel_id = Inp('Enter the id of the channel where the message lies: ')
-    guild_id = Inp('Enter id of the guild where the given channel lies: ')
-    message_id = Inp('Enter id of the message where to react: ')
+    channel_id = Inp('1139607196993331273')
+    guild_id = Inp('1139607195831500802')
+    message_id = Inp('1139896709321863219')
     endpoint = Inp('Enter the api endpoint ( dm response for help ): ')
     threads = []
     for token in tokens:
