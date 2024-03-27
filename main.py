@@ -18,7 +18,10 @@ class Reactor:
         self.endpoint = ep
         self.guildid = guildId
         self.messageid = messageid
-    
+        self.session = tls_client.Session(
+       client_identifier="chrome_112",
+       random_tls_extension_order=True
+)
     def React(self):
         global reacted, failed
         headers = {
@@ -45,7 +48,7 @@ class Reactor:
             'location': 'Message',
             'type': '0',
         }
-        response = session.put(
+        response = self.session.put(
             f'https://discord.com/api/v9/channels/{self.channelid}/messages/{self.messageid}/reactions/{self.endpoint}',
             params=params,
             headers=headers,
